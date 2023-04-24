@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0"
+            fx:controller="ui.fx.DetailsController">
+    <Button text="Show details" onAction="#showDetails" />
+    <GridPane>
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="%details.sender"/>
+        <TextField GridPane.rowIndex="0"  GridPane.columnIndex="1" fx:id="txtSender" editable="false"/>
+        <Button GridPane.rowIndex="0"  GridPane.columnIndex="2" visible="false" fx:id="btnAddSenderPassword" onAction="#addSenderPassword">🔓</Button>
+
+        <Label GridPane.rowIndex="1"  GridPane.columnIndex="0" text="%details.receiver"/>
+        <TextField GridPane.rowIndex="1"  GridPane.columnIndex="1" fx:id="txtReceiver" editable="false"/>
+        <Button GridPane.rowIndex="1"  GridPane.columnIndex="2" visible="false" fx:id="btnAddReceiverPassword" onAction="#addReceiverPassword"/>
+
+    </GridPane>
+    <Label text="%details.content"/>
+    <TextArea fx:id="txtContent" editable="false" />
+    <Button text="%details.update" disable="true" fx:id="btnUpdate" onAction="#updateContent"/>
+    <Button text="%details.delete" fx:id="btnDelete" onAction="#deleteMessage" visible="false"/>
+</VBox>
